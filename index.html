@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow: auto;
+            position: relative;
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            opacity: 0.8;
+            animation: twinkle 3s infinite;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .resume-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .contact-links a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        .project-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .project {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const starsContainer = document.getElementById("stars");
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                starsContainer.appendChild(star);
+            }
+        });
+    </script>
+    
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>SUSHMITHA V</h2>
+        <img src="Sushmitha.jpeg" alt="My Photo" class="profile-img">
+        <p>I am a passionate web developer skilled in HTML, CSS, and JavaScript.</p>
+        <a href="Sushmitha_V_resume.pdf" download class="resume-button">Download Resume</a>
+    </section>
+    
+    <section id="friend">
+        <h2>About My Friend</h2>
+        <p><strong>Sushmitha V</strong> is a talented and aspiring IT professional currently pursuing her B.Tech in Information Technology. She has a strong passion for coding and web development. She constantly explores new technologies and works on innovative projects that enhance her problem-solving skills. With a dedication to learning and a keen interest in software development, Sushmitha aims to create impactful solutions in the tech industry.</p>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>HTML, CSS, JavaScript, Java, Python, SQL</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+               
+                <p>Project 1: I have created a project that is Digital diary.</p>
+                <p>Description: An application for writing daily entries and categorizing them, secured with password protection.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p class="contact-links">
+            Email: <a href="mailto:22it062@vcew.ac.in">22it062@vcew.ac.in</a><br>
+            GitHub: <a href="https://github.com/Sushmithaselvamani?tab=repositories" target="_blank">Sushmithaselvamani</a><br>
+            LinkedIn: <a href="https://www.linkedin.com/in/sushmitha-v" target="_blank">Sushmitha V</a>
+        </p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+</body>
+</html>
